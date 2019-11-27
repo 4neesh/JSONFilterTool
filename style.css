@@ -1,0 +1,26 @@
+@charset "utf-8";
+h1,h2{
+  background-color: white;
+}
+body{
+  background-color: grey;
+}
+#selectYear{
+  width: 130px;
+}
+#selectCountry{
+  width:180px;
+}
+#hitsTable{
+  border-collapse: collapse;
+  border-style:solid;
+  width: auto;
+  background-color: white;
+}
+td{
+  border-left: 1px solid black;
+  border-top: 1px solid black
+}
+th{
+  border: 1px solid black;
+}

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css"/>
+  <title>Best-selling albums</title>
+  <script src ="albumDetails.js"></script>
+  <script src="filters.js"></script>
+
+</head>
+<body>
+  <h1>Best Selling Albums</h1>
+  <h2>A list of best-selling albums by year in the United States</h2>
+
+
+
+  <label for="selectYear">Please select a year: </label>
+  <select id="selectYear" onchange= "filterYear()">Filter By Year
+      <option>All years</option>
+  </select>
+<br><br>
+
+  <label for="selectCountry">Please select a country of origin: </label>
+  <select id="selectCountry" onchange="filterNationality()";>
+    <option>All nationalities</option>
+  </select>
+
+<br><br>
+
+  <table id="hitsTable">
+    <tr>
+      <th width=60>Year</th>
+      <th width=280>Artist</th>
+      <th width=200>Nationality</th>
+      <th width=300>Album</th>
+    </tr>
+  </table>
+
+
+<script>
+
+function filterYear()
+{
+  var input, filter, table, tr, td, i;
+  //define variables
+  input = document.getElementById("selectYear");
+  table = document.getElementById("hitsTable");
+  tr = table.getElementsByTagName("tr");
+  //loop each row for the year in the first column
+  for (i = 0; i < tr.length; i++)
+  {
+    td = tr[i].getElementsByTagName("td")[0];
+
+    if (td)
+     {
+      if (td.innerHTML.toUpperCase().indexOf(input.value) > -1)
+       {
+        //show row if the values match
+        tr[i].style.display = "";
+       }
+       else
+        {
+        //hide row if values don't match
+        tr[i].style.display ="none";
+        }
+      }
+
+  }
+    if (input.value == "All years")
+    var x = document.getElementById("selectCountry")
+      {
+          if (x.value=="All nationalities"){
+        for (i = 0; i < tr.length; i++)
+          {
+            tr[i].style.display=""
+          }
+
+      }
+      if(x.value=="Canada")
+      {
+        for (i = 0; i < tr.length; i++)
+          {
+            tr[i].style.display=""
+          }
+          filterNationality()
+      }
+      else if (x.value=="United Kingdom")
+      {
+        for (i = 0; i < tr.length; i++)
+          {
+            tr[i].style.display=""
+          }
+          filterNationality()
+      }
+      else if (x.value=="United States")
+      {
+        for (i = 0; i < tr.length; i++)
+          {
+            tr[i].style.display=""
+          }
+          filterNationality()
+      }
+      else if (x.value=="N/A")
+      {
+        for (i = 0; i < tr.length; i++)
+          {
+            tr[i].style.display=""
+          }
+          filterNationality()
+      }
+    }
+}
+</script>
+
+<script>
+function filterNationality() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("selectCountry");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("hitsTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[2];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+  if (input.value == "All nationalities")
+    {
+      for (i = 0; i < tr.length; i++)
+        {
+          tr[i].style.display=""
+        }
+
+        }
+
+
+    sortYear()
+
+}
+</script>
+
+<script>
+function sortYear(){
+var x = document.getElementById("selectCountry").value;
+  if (x=="Canada"){
+    var y = document.getElementById("selectYear")
+  for (i = 1 ; y.length=0; i){
+    y.remove(i)}
+
+//the bit above was a lot of difficulty as i had to use a different for loop style
+  var neew = document.getElementById("selectYear")
+  var option = document.createElement("option")
+  option.text="All years"
+  neew.add(option)
+
+    var options = CanadaYearArr;
+  for(var i = 0; i < options.length; i++) {
+      var opt = options[i];
+      var el = document.createElement('option');
+      el.textContent = opt;
+      el.value = opt;
+      y.appendChild(el);
+  }
+}
+
+else if(x=="United Kingdom"){
+
+    var y = document.getElementById("selectYear")
+  for (i = 1 ; y.length=0; i){
+    y.remove(i)}
+    var neew = document.getElementById("selectYear")
+    var option = document.createElement("option")
+    option.text="All years"
+    neew.add(option)
+
+var options = UKYearArr;
+  for(var i = 0; i < options.length; i++) {
+      var opt = options[i];
+      var el = document.createElement('option');
+      el.textContent = opt;
+      el.value = opt;
+      y.appendChild(el);
+  }
+}
+else if (x=="United States"){
+  var y = document.getElementById("selectYear")
+for (i = 1 ; y.length=0; i){
+  y.remove(i)}
+  var neew = document.getElementById("selectYear")
+  var option = document.createElement("option")
+  option.text="All years"
+  neew.add(option)
+
+var options = USAYearArr;
+  for(var i = 0; i < options.length; i++) {
+      var opt = options[i];
+      var el = document.createElement('option');
+      el.textContent = opt;
+      el.value = opt;
+      y.appendChild(el);
+  }
+}
+else if (x=="N/A"){
+
+  var y = document.getElementById("selectYear")
+for (i = 1 ; y.length=0; i){
+  y.remove(i)}
+  var neew = document.getElementById("selectYear")
+  var option = document.createElement("option")
+  option.text="All years"
+  neew.add(option)
+
+  var options = NAYearArr;
+  for(var i = 0; i < options.length; i++) {
+      var opt = options[i];
+      var el = document.createElement('option');
+      el.textContent = opt;
+      el.value = opt;
+      y.appendChild(el);
+  }
+}
+else if (x=="All nationalities"){
+  var y = document.getElementById("selectYear")
+for (i = 1 ; y.length=0; i){
+  y.remove(i)}
+  var neew = document.getElementById("selectYear")
+  var option = document.createElement("option")
+  option.text="All years"
+  neew.add(option)
+
+  var options = yearArr;
+  for(var i = 0; i < options.length; i++) {
+      var opt = options[i];
+      var el = document.createElement('option');
+      el.textContent = opt;
+      el.value = opt;
+      y.appendChild(el);
+    }
+}
+}
+
+</script>
+
+</body>
+</html>
