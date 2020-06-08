@@ -9,4 +9,4 @@ A simple application to render JSON data that can be filtered and sorted
 </ul>
 
 # Usage
-To use, simple clone the repository and open the albums5.html file in a web browser
+To use, clone the repository and open the albums5.html file in a web browser
